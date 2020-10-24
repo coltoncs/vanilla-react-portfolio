@@ -1,0 +1,18 @@
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+}
+
+form input, form select, form textarea {
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 2px solid #333333;
+}
+
+@media screen and (max-width: 700px){
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}

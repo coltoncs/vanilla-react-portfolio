@@ -1,0 +1,9 @@
+@media screen and (max-width: 568px){
+    h1, h2, h3 {
+        font-size: 2.5rem;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+}
