@@ -40,6 +40,7 @@ body {
 
 .header {
   font-size: 3rem;
+  text-shadow: 5px 5px 5px #07082c80;
 }
 
 .header h3 {
@@ -57,60 +58,3 @@ body {
   box-shadow: 4px 8px 20px 0px #191a24;
 }
 
-/** 
-*
-*   Hamburger Menu CSS 
-*
-**/
-
-.nav-toggle {
-  background: none;
-  padding: 25px;
-  color: #fff;
-  border: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  outline: 0;
-}
-
-.hamburger-line {
-  display: block;
-  margin-top: 10px;
-  
-  border: 2px solid #bebebe;
-  padding: 0 10px 0 30px;
-  transition: transform 0.5s, border 0.5s;
-}
-
-.nav-toggle.active .hamburger-line:nth-child(1){
-  transform: translateX(15px) rotate(45deg) translateY(20px);
-  border: 2px solid #af0000;
-}
-
-.nav-toggle.active .hamburger-line:nth-child(2){
-  transform: translateX(900px);
-}
-
-.nav-toggle.active .hamburger-line:nth-child(3){
-  transform: translateX(15px) rotate(-45deg) translateY(-20px);
-  border: 2px solid #af0000;
-}
-
-@media screen and (max-width: 568px){
-  .nav-toggle {
-    top: 85vh;
-
-    
-    border-radius: 50px;
-    background: var(--accent-color);
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
-    right: 25px;
-    transition: background 1s, box-shadow 0.6s;
-  }
-
-  .nav-toggle.active {
-    background: #3e2b41;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.75);
-  }
-}
