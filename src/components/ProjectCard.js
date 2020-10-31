@@ -23,26 +23,29 @@ const Card = styled.div`
     }
 `;
 
-const Description = styled.div`
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    margin-top: -64%;
-    z-index: 102;
+const Content = styled.div`
     color: #000;
     padding: 15px;
     text-align: center;
 `;
 
-function ProjectCard({title, img, meta, description}){
+const Title = styled.h2`
+    color: white;
+    text-shadow: 0 0 10px black;
+`;
+
+const Description = styled.p`
+    margin: 0 5px;
+`;
+
+function ProjectCard({title, img, icons}){
     return(
         <Card>
+            <Content>
+                <Title>{title}</Title>
+                <Description>{icons.map(icon => <span><img src={icon}/></span>)}</Description>
+            </Content>
             <img src={img}/>
-            <div className="blur"></div>
-            <Description>
-                <h2>{title}</h2>
-                <p>{description}</p>
-            </Description>
         </Card>
     )
 }

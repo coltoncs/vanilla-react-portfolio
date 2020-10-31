@@ -1,4 +1,7 @@
 export { default as Aws } from './Aws'
+export { default as Database } from './Database'
+export { default as Gitlab } from './Gitlab'
 export { default as Menu } from './Menu'
-export { default as React } from './React'
+export { default as ReactIcon } from './React'
 export { default as Settings } from './Settings'
+export { default as Users } from './Users'

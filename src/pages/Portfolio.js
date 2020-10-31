@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 import ProjectCard from '../components/ProjectCard';
 
-import mrp from '../static/img/mrp-screenshot.PNG';
-
+import {Aws, Database, Gitlab, ReactIcon, Users} from '../components/icons/index';
 
 const Gallery = styled.div`
   display: flex;
@@ -18,13 +17,19 @@ const Gallery = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (min-width: 769px) and (max-width: 1199px){
+    & {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (min-width: 560px) and (max-width: 768px){
     & {
       gap: 2em;
     }
   }
 
-  @media screen and (max-width: 560px){
+  @media screen and (max-width: 559px){
     & {
       gap: 1em;
     }
@@ -38,11 +43,12 @@ function Products() {
         <h1>View a collection of some of my recent work</h1>
       </div>
       <Gallery>
-        <ProjectCard img="https://via.placeholder.com/1280" title="Lorem ipsum" description="Lorem ipsum dolor sit amet" />
-        <ProjectCard img="https://via.placeholder.com/1280" title="Lorem ipsum" description="Lorem ipsum dolor sit amet" />
-        <ProjectCard img="https://via.placeholder.com/1280" title="Lorem ipsum" description="Lorem ipsum dolor sit amet" />
-        <ProjectCard img="https://via.placeholder.com/1280" title="Lorem ipsum" description="Lorem ipsum dolor sit amet" />
+        <ProjectCard img="https://via.placeholder.com/1280" title="Market Ready Painting" icons={[ReactIcon, Users, Database, Gitlab]} />
+        <ProjectCard img="https://via.placeholder.com/1280" title="Personal Portfolio Site" icons={[ReactIcon, Users, Database]} />
+        <ProjectCard img="https://via.placeholder.com/1280" title="React Weather App" icons={[ReactIcon, Users, Database]} />
+        <ProjectCard img="https://via.placeholder.com/1280" title="Julian's Band Website" icons={[ReactIcon, Users, Database]} />
       </Gallery>
+      <img src={ReactIcon}/>
     </section>
   );
 }

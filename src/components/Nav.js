@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -10,7 +10,7 @@ const Navigation = styled.nav`
   justify-content: center;
   align-items: center;
   position: fixed;
-  transform: translateX(-9000px);
+  transform: translateX(-100vw);
   transition: transform 1.2s ease-in-out, background-color 1.6s;
   font-family: 'Bevan', cursive;
   text-shadow: 5px 5px 2px black;
@@ -22,7 +22,17 @@ const Navigation = styled.nav`
     background-color: #3e2b41;
   }
 
-  
+  @media screen and (min-width: 900px){
+    transform: translateX(-100vw);
+  }
+
+  @media screen and (min-width: 459px) and (max-width: 899px) {
+    transform: translateX(-900px);
+  }
+
+  @media screen and (max-width: 458px) {
+    transform: translateX(-500px);
+  }
 `;
 
 const NavList = styled.ul`
@@ -92,8 +102,7 @@ const HamburgerMenu = styled.button`
 
   @media screen and (max-width: 568px){
     & {
-      top: 85vh;
-      
+      top: 85vh;     
       border-radius: 30px;
       background: var(--accent-color);
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
@@ -124,7 +133,6 @@ const HamburgerLine = styled.span`
 
 function Nav() {
     const [toggleNavbar, setToggleNavbar] = useState(false);
-    const [toggleSettings, setToggleSettings] = useState(false);
 
     const handleClick = () => {
         setToggleNavbar(!toggleNavbar);
