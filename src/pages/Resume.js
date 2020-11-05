@@ -1,6 +1,6 @@
 import './Resume.css';
 
-function Resume(){
+export default function Resume(){
     return (
         <section>
             <div className="header">
@@ -23,5 +23,3 @@ function Resume(){
         </section>
     );
 }
-
-export default Resume;

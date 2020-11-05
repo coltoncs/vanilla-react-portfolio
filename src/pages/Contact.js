@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 
@@ -7,10 +6,23 @@ const ContactForm = styled.form`
   grid-template-columns: 1fr 1fr;
   row-gap: 1rem;
 
-  & input, & select, & textarea {
+  & input, & textarea {
+    border-radius: 25px;
+    padding: 10px 15px;
+    background: #FFFFF9;
+    border: 0;
+  }
+
+  & input::placeholder, & textarea::placeholder {
+    color: black;
+  }
+
+  & .sub-btn {
+    grid-column: 1/3;
+    background: #FFFFF9;
     border-radius: 20px;
-    padding: 5px 15px;
-    border: 2px solid #333333;
+    padding: 15px;
+    border: 0;
   }
 
   @media screen and (max-width: 700px){
@@ -21,9 +33,9 @@ const ContactForm = styled.form`
   }
 `;
 
-function Contact() {
-  const { register, handleSubmit, errors } = useForm();
-  const formRef = useRef(null);
+export default function Contact() {
+  const { handleSubmit, register, errors } = useForm();
+  const onSubmit = values => console.log(values);
 
   return (
     <section>
@@ -31,22 +43,17 @@ function Contact() {
         <h1>Let's get in contact</h1>
       </div>
 
-      <ContactForm ref={formRef}>
+      <ContactForm onSubmit={handleSubmit(onSubmit)}>
         <label for="fname">First Name:</label>
         <input name="fname" type="text" placeholder="First Name" ref={register({required: true})} />
         <label for="lname">Last Name:</label>
         <input name="lname" type="text" placeholder="Last Name" ref={register({required: true})} />
         <label for="email">Email:</label>
         <input name="email" type="email" placeholder="Email" ref={register({required: true})} />
-        <label for="fname">Subject:</label>
-        <select ref={register}>
-          <option>Inquire about work</option>
-        </select>
         <label for="message">Message:</label>
         <textarea name="message" placeholder="Enter your message here..." rows="5" ref={register}></textarea>
+        <button className="sub-btn" type="submit">Send</button>
       </ContactForm>
     </section>
   );
 }
-
-export default Contact;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import ProjectCard from '../components/ProjectCard';
 
-import {Aws, Database, Gitlab, ReactIcon, Users} from '../components/icons/index';
+import {Database, Gitlab, ReactIcon, Users} from '../components/icons/index';
 
 const Gallery = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ const Gallery = styled.div`
   }
 `;
 
-function Products() {
+export default function Portfolio() {
   return (
     <section>
       <div className="header">
@@ -48,9 +48,7 @@ function Products() {
         <ProjectCard img="https://via.placeholder.com/1280" title="React Weather App" icons={[ReactIcon, Users, Database]} />
         <ProjectCard img="https://via.placeholder.com/1280" title="Julian's Band Website" icons={[ReactIcon, Users, Database]} />
       </Gallery>
-      <img src={ReactIcon}/>
+      <img src={ReactIcon} alt="tech icon"/>
     </section>
   );
 }
-
-export default Products;
